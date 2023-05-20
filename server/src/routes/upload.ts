@@ -38,7 +38,7 @@ export async function uploadRoutes(app: FastifyInstance) {
 
     await pump(upload.file, writeStream)
 
-    const fullUrl = request.protocol.concat('//').concat(request.hostname)
+    const fullUrl = request.protocol.concat('://').concat(request.hostname)
     const fileUrl = fullUrl.concat('/uploads/').concat(fileName).toString()
 
     return { fileUrl }
